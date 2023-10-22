@@ -54,7 +54,7 @@ var sentence = [];
 
 function printDaArray() {
      console.log(previous_result);
-     sentence = sentence.concat(previous_result+" ");
+     sentence = sentence.concat(previous_result);
      document.getElementById("textarea1").innerHTML = sentence.join("");
 
 }
