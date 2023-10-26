@@ -51,17 +51,21 @@ function gotResult(error, results) {
 acc_result = previous_result
 
 var sentence = [];
-
-function printDaArray() {
-     console.log(previous_result);
-     sentence = sentence.concat(previous_result);
-     document.getElementById("textarea1").innerHTML = sentence.join("");
-
+var index = sentence.indexOf("_");
+if (index > -1) {
+     sentence.splice(index, 1);
 }
 
 
-let startTimer = setInterval(printDaArray, 2000);
-printDaArray()
+function printSentence() {
+     console.log(previous_result);
+     sentence = sentence.concat(previous_result+" ");
+     document.getElementById("textarea1").innerHTML = sentence.join("");
+}
+
+
+let startTimer = setInterval(printSentence, 3500);
+printSentence()
 
 
 function switchcam() {
@@ -70,7 +74,7 @@ function switchcam() {
           VIDEO = {
                video: {
                     facingMode: {
-                         exact: "environment"
+                         exact: "user"
                     }
                }
           };
@@ -78,7 +82,7 @@ function switchcam() {
           VIDEO = {
                video: {
                     facingMode: {
-                         exact: "user"
+                         exact: "environment"
                     }
                }
           };
@@ -87,3 +91,4 @@ function switchcam() {
      //capture = createCapture(VIDEO);
      //video.hide();
 }
+
