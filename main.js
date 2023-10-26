@@ -1,5 +1,5 @@
 arr = [];
-switchFlag = false;
+switchFlag = true;
 
 
 
@@ -51,20 +51,21 @@ function gotResult(error, results) {
 acc_result = previous_result
 
 var sentence = [];
-var index = sentence.indexOf("_");
-if (index > -1) {
-     sentence.splice(index, 1);
-}
+const index = sentence.indexOf("_");
+
 
 
 function printSentence() {
      console.log(previous_result);
-     sentence = sentence.concat(previous_result+" ");
+     sentence = sentence.concat(previous_result);
      document.getElementById("textarea1").innerHTML = sentence.join("");
+     if (index > -1) {
+          sentence.splice(index, 1);
+     }
 }
 
 
-let startTimer = setInterval(printSentence, 3500);
+let startTimer = setInterval(printSentence, 2500);
 printSentence()
 
 
