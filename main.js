@@ -1,5 +1,5 @@
 arr = [];
-switchFlag = true;
+switchFlag = false;
 
 
 
@@ -64,8 +64,7 @@ function printSentence() {
      }
 }
 
-
-let startTimer = setInterval(printSentence, 2500);
+let startTimer = setInterval(printSentence, 3500);
 printSentence()
 
 
@@ -93,3 +92,6 @@ function switchcam() {
      //video.hide();
 }
 
+function cleartext() {
+     document.getElementById("textarea1").innerHTML = "";
+}
