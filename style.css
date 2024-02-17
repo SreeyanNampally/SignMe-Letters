@@ -52,7 +52,7 @@ canvas {
      box-shadow: 5px 5px 5px rgb(0, 93, 252);
      margin-top: -30px;
      background: rgb(61, 61, 61);
-     filter: saturate(100%);
+     filter: contrast(150%);
 
 
 }
